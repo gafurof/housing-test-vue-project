@@ -1,0 +1,30 @@
+<template>
+  <v-app>
+    <v-main class="overflow-y-auto" style="height: 100vh">
+      <TheNav />
+      <router-view></router-view>
+    </v-main>
+  </v-app>
+</template>
+
+<script setup>
+import TheNav from './layouts/TheNav.vue'
+</script>
+
+<style>
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+</style>
