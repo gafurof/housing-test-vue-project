@@ -5,7 +5,7 @@
       <v-slide-group-item v-for="item in apartments" :key="item.id">
         <v-card width="380" class="mr-6 ma-2">
 
-          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" cover class="position-relative">
+          <v-img height="250" src="@/assets/unsplash_2gDwlIim3Uw.png" cover class="position-relative">
 
             <div class="d-flex justify-space-between w-100 pa-3">
 
@@ -63,8 +63,8 @@
               <v-card-title>{{ item.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
-              <v-btn icon="$vuetify" variant="text"></v-btn>
-              <v-btn icon="$vuetify" variant="tonal"></v-btn>
+              <v-btn icon="mdi-fullscreen" variant="text"></v-btn>
+              <v-btn icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>
 
@@ -79,7 +79,7 @@
       <v-col v-for="item in apartments" :key="item.id" cols="12" class="d-flex justify-center">
         <v-card width="343">
 
-          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" cover class="position-relative">
+          <v-img height="250" src="@/assets/unsplash_2gDwlIim3Uw.png" cover class="position-relative">
 
             <div class="d-flex justify-space-between w-100 pa-3">
 
@@ -137,8 +137,8 @@
               <v-card-title>{{ item.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
-              <v-btn icon="$vuetify" variant="text"></v-btn>
-              <v-btn icon="$vuetify" variant="tonal"></v-btn>
+              <v-btn icon="mdi-fullscreen" variant="text"></v-btn>
+              <v-btn icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>
 
