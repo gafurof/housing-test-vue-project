@@ -1,45 +1,164 @@
 <template>
-  <v-sheet class="mx-auto mb-12" width="95%">
-    <v-slide-group show-arrows>
-      <v-slide-group-item v-for="n in 25" :key="n" class="mx-2">
-        <v-card class="mr-6 ml-1" width="18rem">
-          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" cover></v-img>
+  <v-sheet class="mx-auto mb-12 mt-2" width="95%">
+
+    <v-slide-group v-if="mdAndUp" show-arrows>
+      <v-slide-group-item v-for="item in apartments" :key="item.id">
+        <v-card width="380" class="mr-6 ma-2">
+
+          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" cover class="position-relative">
+
+            <div class="d-flex justify-space-between w-100 pa-3">
+
+              <v-btn size="small" color="primary" variant="flat">
+                FEATURED
+              </v-btn>
+
+              <v-btn size="small" color="#0D263B" variant="flat">
+                FOR SALE
+              </v-btn>
+
+            </div>
+
+          </v-img>
 
           <v-card-item>
-            <v-card-title>Cafe Badilico</v-card-title>
-
+            <v-card-title>{{ item.title }}</v-card-title>
             <v-card-subtitle>
               <span class="me-1">Local Favorite</span>
             </v-card-subtitle>
           </v-card-item>
 
-          <div class="d-flex align-center justify-space-between pa-3" width="100%">
-            <div class="d-flex flex-column align-center justify-center" style="font-size: 13px">
-              <v-icon>mdi-account</v-icon>
-              <p>4 beds</p>
+          <div class="d-flex align-center justify-space-between pa-3">
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-bed</v-icon>
+              <span>4 beds</span>
             </div>
-            <div class="d-flex flex-column align-center justify-center" style="font-size: 13px">
-              <v-icon>mdi-account</v-icon>
-              <p>5 baths</p>
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-shower</v-icon>
+              <span>5 baths</span>
             </div>
-            <div class="d-flex flex-column align-center justify-center" style="font-size: 13px">
-              <v-icon>mdi-account</v-icon>
-              <p>1 agarage</p>
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-car</v-icon>
+              <span>1 garage</span>
             </div>
-            <div class="d-flex flex-column align-center justify-center" style="font-size: 13px">
-              <v-icon>mdi-account</v-icon>
-              <p>1200 Sq Ft</p>
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-ruler-square</v-icon>
+              <span>1200 Sq Ft</span>
+            </div>
+
+          </div>
+
+          <v-divider class="mx-4 mb-1" />
+
+          <div class="d-flex align-center justify-space-between">
+            <div>
+              <v-card-subtitle>
+                <del class="me-1">{{ item.oldPrice }}</del>
+              </v-card-subtitle>
+
+              <v-card-title>{{ item.price }}</v-card-title>
+            </div>
+            <div class="d-flex ga-3 pr-2">
+              <v-btn icon="$vuetify" variant="text"></v-btn>
+              <v-btn icon="$vuetify" variant="tonal"></v-btn>
             </div>
           </div>
 
-          <v-divider class="mx-4 mb-1"></v-divider>
 
-          <v-card-subtitle>
-            <del class="me-1">$2,800/mo</del>
-          </v-card-subtitle>
-          <v-card-title>$7,500/mo</v-card-title>
         </v-card>
       </v-slide-group-item>
     </v-slide-group>
+
+
+    <v-row v-else class="justify-center ga-4">
+
+      <v-col v-for="item in apartments" :key="item.id" cols="12" class="d-flex justify-center">
+        <v-card width="343">
+
+          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" cover class="position-relative">
+
+            <div class="d-flex justify-space-between w-100 pa-3">
+
+              <v-btn size="small" color="primary" variant="flat">
+                FEATURED
+              </v-btn>
+
+              <v-btn size="small" color="#0D263B" variant="flat">
+                FOR SALE
+              </v-btn>
+
+            </div>
+
+          </v-img>
+
+          <v-card-item>
+            <v-card-title>{{ item.title }}</v-card-title>
+            <v-card-subtitle>
+              <span class="me-1">Local Favorite</span>
+            </v-card-subtitle>
+          </v-card-item>
+
+          <div class="d-flex align-center justify-space-between pa-3">
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-bed</v-icon>
+              <span>4 beds</span>
+            </div>
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-shower</v-icon>
+              <span>5 baths</span>
+            </div>
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-car</v-icon>
+              <span>1 garage</span>
+            </div>
+
+            <div class="d-flex flex-column align-center text-caption">
+              <v-icon size="18">mdi-ruler-square</v-icon>
+              <span>1200 Sq Ft</span>
+            </div>
+
+          </div>
+
+          <v-divider class="mx-4 mb-1" />
+
+          <div class="d-flex align-center justify-space-between">
+            <div>
+              <v-card-subtitle>
+                <del class="me-1">{{ item.oldPrice }}</del>
+              </v-card-subtitle>
+
+              <v-card-title>{{ item.price }}</v-card-title>
+            </div>
+            <div class="d-flex ga-3 pr-2">
+              <v-btn icon="$vuetify" variant="text"></v-btn>
+              <v-btn icon="$vuetify" variant="tonal"></v-btn>
+            </div>
+          </div>
+
+        </v-card>
+      </v-col>
+
+    </v-row>
+
   </v-sheet>
 </template>
+
+<script setup>
+import { useDisplay } from 'vuetify'
+
+const { mdAndUp } = useDisplay()
+
+const apartments = Array.from({ length: 5 }, (_, i) => ({
+  id: i + 1,
+  title: 'Cafe Badilico',
+  price: '$7,500/mo',
+  oldPrice: '$2,800/mo',
+}))
+</script>
