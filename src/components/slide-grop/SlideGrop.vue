@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="mx-auto mb-12 mt-2" width="95%">
+  <v-sheet class="mx-auto mb-12 mt-2" width="94%">
 
     <v-slide-group v-if="mdAndUp" show-arrows>
       <v-slide-group-item v-for="item in apartments" :key="item.id">
