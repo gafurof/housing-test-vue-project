@@ -5,9 +5,9 @@
         <v-btn class="ma-2" icon="mdi-close" variant="text" @click="drawer = false"></v-btn>
         <div style="" class="d-flex flex-column w-100 align-center justify-center h-100">
           <v-list>
-            <v-list-item class="text-center pa-6" title="Home" to="/"></v-list-item>
-            <v-list-item class="text-center pa-6" title="Properties" to="/properties"></v-list-item>
-            <v-list-item class="text-center pa-6" title="Contacts" to="/contacts"></v-list-item>
+            <v-list-item class="text-center pa-6" title="Home" @click="drawer = false" to="/"></v-list-item>
+            <v-list-item class="text-center pa-6" title="Properties" @click="drawer = false" to="/properties"></v-list-item>
+            <v-list-item class="text-center pa-6" title="Contacts" @click="drawer = false" href="#contacts" ></v-list-item>
           </v-list>
           <v-list class="d-flex mt-15">
             <v-tooltip v-for="social in socials" :key="social.name" :text="social.name" location="top">
@@ -36,10 +36,18 @@
 
       <v-spacer></v-spacer>
 
-      <div class="d-none d-md-flex align-center">
-        <v-btn value="Home" variant="plain">Home</v-btn>
-        <v-btn value="Properties" variant="plain">Properties</v-btn>
-        <v-btn value="Contacts" variant="plain">Contacts</v-btn>
+      <div class="d-none d-md-flex align-center ga-4">
+        <v-btn to="/main" variant="text" exact>
+          Home
+        </v-btn>
+
+        <v-btn to="/properties" variant="text" exact>
+          Properties
+        </v-btn>
+
+        <v-btn href="#contacts" variant="text" exact>
+          Contacts
+        </v-btn>
       </div>
       <v-spacer></v-spacer>
       <nav-login-button-dekstop v-if="isLoggedIn === false"></nav-login-button-dekstop>

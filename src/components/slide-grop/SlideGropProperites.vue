@@ -1,24 +1,15 @@
+<!-- SlideGropProperites.vue -->
 <template>
   <v-sheet class="mx-auto mb-12 mt-2" width="94%">
 
     <v-slide-group v-if="mdAndUp" show-arrows>
       <v-slide-group-item v-for="item in apartments" :key="item.id">
         <v-card width="380" class="mr-6 ma-2">
-
           <v-img height="250" src="@/assets/unsplash_2gDwlIim3Uw.png" cover class="position-relative">
-
             <div class="d-flex justify-space-between w-100 pa-3">
-
-              <v-btn size="small" color="primary" variant="flat">
-                FEATURED
-              </v-btn>
-
-              <v-btn size="small" color="#0D263B" variant="flat">
-                FOR SALE
-              </v-btn>
-
+              <v-btn size="small" color="primary" variant="flat">FEATURED</v-btn>
+              <v-btn size="small" color="#0D263B" variant="flat">FOR SALE</v-btn>
             </div>
-
           </v-img>
 
           <v-card-item>
@@ -29,27 +20,22 @@
           </v-card-item>
 
           <div class="d-flex align-center justify-space-between pa-3">
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-bed</v-icon>
-              <span>4 beds</span>
+              <span>{{ item.beds }} beds</span>
             </div>
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-shower</v-icon>
-              <span>5 baths</span>
+              <span>{{ item.baths }} baths</span>
             </div>
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-car</v-icon>
-              <span>1 garage</span>
+              <span>{{ item.garage }} garage</span>
             </div>
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-ruler-square</v-icon>
-              <span>1200 Sq Ft</span>
+              <span>{{ item.size }} Sq Ft</span>
             </div>
-
           </div>
 
           <v-divider class="mx-4 mb-1" />
@@ -59,40 +45,26 @@
               <v-card-subtitle>
                 <del class="me-1">{{ item.oldPrice }}</del>
               </v-card-subtitle>
-
               <v-card-title>{{ item.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
               <v-btn icon="mdi-fullscreen" variant="text"></v-btn>
-              <v-btn icon="mdi-heart" variant="tonal"></v-btn>
+              <v-btn :color="item.like ? 'red' : 'black'" icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>
-
 
         </v-card>
       </v-slide-group-item>
     </v-slide-group>
 
-
     <v-row v-else class="justify-center ga-4">
-
       <v-col v-for="item in apartments" :key="item.id" cols="12" class="d-flex justify-center">
         <v-card width="343">
-
           <v-img height="250" src="@/assets/unsplash_2gDwlIim3Uw.png" cover class="position-relative">
-
             <div class="d-flex justify-space-between w-100 pa-3">
-
-              <v-btn size="small" color="primary" variant="flat">
-                FEATURED
-              </v-btn>
-
-              <v-btn size="small" color="#0D263B" variant="flat">
-                FOR SALE
-              </v-btn>
-
+              <v-btn size="small" color="primary" variant="flat">FEATURED</v-btn>
+              <v-btn size="small" color="#0D263B" variant="flat">FOR SALE</v-btn>
             </div>
-
           </v-img>
 
           <v-card-item>
@@ -103,27 +75,22 @@
           </v-card-item>
 
           <div class="d-flex align-center justify-space-between pa-3">
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-bed</v-icon>
-              <span>4 beds</span>
+              <span>{{ item.beds }} beds</span>
             </div>
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-shower</v-icon>
-              <span>5 baths</span>
+              <span>{{ item.baths }} baths</span>
             </div>
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-car</v-icon>
-              <span>1 garage</span>
+              <span>{{ item.garage }} garage</span>
             </div>
-
             <div class="d-flex flex-column align-center text-caption">
               <v-icon size="18">mdi-ruler-square</v-icon>
-              <span>1200 Sq Ft</span>
+              <span>{{ item.size }} Sq Ft</span>
             </div>
-
           </div>
 
           <v-divider class="mx-4 mb-1" />
@@ -133,7 +100,6 @@
               <v-card-subtitle>
                 <del class="me-1">{{ item.oldPrice }}</del>
               </v-card-subtitle>
-
               <v-card-title>{{ item.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
@@ -141,10 +107,8 @@
               <v-btn icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>
-
         </v-card>
       </v-col>
-
     </v-row>
 
   </v-sheet>
@@ -152,13 +116,15 @@
 
 <script setup>
 import { useDisplay } from 'vuetify'
+import { defineProps } from 'vue'
 
 const { mdAndUp } = useDisplay()
 
-const apartments = Array.from({ length: 5 }, (_, i) => ({
-  id: i + 1,
-  title: 'Cafe Badilico',
-  price: '$7,500/mo',
-  oldPrice: '$2,800/mo',
-}))
+// apartments prop sifatida olinadi
+const props = defineProps({
+  apartments: {
+    type: Array,
+    default: () => []
+  }
+})
 </script>

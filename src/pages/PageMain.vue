@@ -5,7 +5,6 @@
   <CategorieProperties/>
   <PopularHome/>
   <TestimonialsList/>
-  <TheFooter/>
 </template>
 
 <script setup>
@@ -15,5 +14,4 @@ import RecommedPropertie from '@/components/recommed/RecommedPropertie.vue';
 import WhyChooseUse from '@/components/why-choose-use/WhyChooseUse.vue';
 import PopularHome from '@/components/popular-home/PopularHome.vue';
 import TestimonialsList from '@/components/testimonials/TestimonialsList.vue';
-import TheFooter from '@/layouts/TheFooter.vue';
 </script>

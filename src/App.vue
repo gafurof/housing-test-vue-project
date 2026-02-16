@@ -3,12 +3,14 @@
     <v-main class="overflow-y-auto" style="height: 100vh">
       <TheNav />
       <router-view></router-view>
+      <TheFooter />
     </v-main>
   </v-app>
 </template>
 
 <script setup>
 import TheNav from './layouts/TheNav.vue'
+import TheFooter from '@/layouts/TheFooter.vue';
 </script>
 
 <style>

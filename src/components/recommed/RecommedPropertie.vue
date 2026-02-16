@@ -3,9 +3,15 @@
     <h2 class="text-center mt-13">Recommended</h2>
     <p class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</p>
   </v-container>
-  <SlideGropProperites />
+
+  <SlideGropProperites :apartments="topProperties" />
 </template>
 
 <script setup>
-import SlideGropProperites from '../slide-grop/SlideGropProperites.vue';
+import { useUserInfoStore } from '@/store/index.js'
+import SlideGropProperites from '../slide-grop/SlideGropProperites.vue'
+
+const userStore = useUserInfoStore()
+
+const topProperties = userStore.properties.slice(0, 5)
 </script>

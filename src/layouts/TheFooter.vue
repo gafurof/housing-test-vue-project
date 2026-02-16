@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="py-4 d-flex flex-column" color="darkBlue">
+  <v-footer id="contacts" class="py-4 d-flex flex-column" color="darkBlue">
     <v-container>
       <v-row dense>
         <v-col cols="12" sm="6" md="3" class="d-flex flex-column ga-4 pa-2 mt-2 mb-2 bg-darkBlue">

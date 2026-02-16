@@ -6,23 +6,28 @@
       <p class="title-text">Skyper Pool Partment</p>
       <p class="address-text mt-1">112 Glenwood Ave Hyde Park, Boston, MA</p>
 
-      <div class="d-flex ga-4 align-center mt-3">
-        <div class="d-flex flex-column align-center justify-center">
-          <v-icon color="white">mdi-account</v-icon>
-          <p class="icon-text">diuabwud</p>
+      <div class="d-flex align-center ga-4 justify-space-between pa-3">
+
+        <div class="d-flex flex-column align-center text-caption">
+          <v-icon size="25">mdi-bed</v-icon>
+          <span style="font-size: 140%;">4 beds</span>
         </div>
-        <div class="d-flex flex-column align-center justify-center">
-          <v-icon color="white">mdi-account</v-icon>
-          <p class="icon-text">diuabwud</p>
+
+        <div class="d-flex flex-column align-center text-caption">
+          <v-icon size="25">mdi-shower</v-icon>
+          <span style="font-size: 140%;">5 baths</span>
         </div>
-        <div class="d-flex flex-column align-center justify-center">
-          <v-icon color="white">mdi-account</v-icon>
-          <p class="icon-text">diuabwud</p>
+
+        <div class="d-flex flex-column align-center text-caption">
+          <v-icon size="25">mdi-car</v-icon>
+          <span style="font-size: 140%;">1 garage</span>
         </div>
-        <div class="d-flex flex-column align-center justify-center">
-          <v-icon color="white">mdi-account</v-icon>
-          <p class="icon-text">diuabwud</p>
+
+        <div class="d-flex flex-column align-center text-caption">
+          <v-icon size="25">mdi-ruler-square</v-icon>
+          <span style="font-size: 140%;">1200 Sq Ft</span>
         </div>
+
       </div>
 
       <p class="custom-text mt-3">$5.250/mo</p>
