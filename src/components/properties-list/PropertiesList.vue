@@ -46,7 +46,7 @@
               <v-card-title>{{ propertie.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
-              <v-btn icon="mdi-fullscreen" variant="text"></v-btn>
+              <v-btn :to="'/product/' + propertie.id" icon="mdi-fullscreen" variant="text"></v-btn>
               <v-btn :color="propertie.like ? 'red' : 'succes'" icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>

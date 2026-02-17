@@ -1,4 +1,3 @@
-<!-- SlideGropProperites.vue -->
 <template>
   <v-sheet class="mx-auto mb-12 mt-2" width="94%">
 
@@ -48,7 +47,7 @@
               <v-card-title>{{ item.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
-              <v-btn icon="mdi-fullscreen" variant="text"></v-btn>
+              <v-btn :to="'/product/' + item.id" icon="mdi-fullscreen" variant="text"></v-btn>
               <v-btn :color="item.like ? 'red' : 'black'" icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>
@@ -103,8 +102,8 @@
               <v-card-title>{{ item.price }}</v-card-title>
             </div>
             <div class="d-flex ga-3 pr-2">
-              <v-btn icon="mdi-fullscreen" variant="text"></v-btn>
-              <v-btn icon="mdi-heart" variant="tonal"></v-btn>
+              <v-btn :to="'/product/' + item.id" icon="mdi-fullscreen" variant="text"></v-btn>
+              <v-btn :color="item.like ? 'red' : 'black'" icon="mdi-heart" variant="tonal"></v-btn>
             </div>
           </div>
         </v-card>
@@ -120,7 +119,6 @@ import { defineProps } from 'vue'
 
 const { mdAndUp } = useDisplay()
 
-// apartments prop sifatida olinadi
 const props = defineProps({
   apartments: {
     type: Array,
