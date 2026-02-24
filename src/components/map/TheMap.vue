@@ -24,6 +24,9 @@ import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import markerIcon from 'leaflet/dist/images/marker-icon.png'
+import markerIconRetina from 'leaflet/dist/images/marker-icon-2x.png'
+import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 import { useUserInfoStore } from '@/store/index.js'
 
 const store = useUserInfoStore()
@@ -41,18 +44,23 @@ onMounted(() => {
 
   const map = L.map(mapContainer.value).setView([lat, lng], 13)
 
-   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     subdomains: 'abcd',
     maxZoom: 20
   }).addTo(map)
 
-  L.marker([lat, lng], {
-    radius: 8,
-    fillColor: '#ff5722',
-    color: '#ff5722',
-    weight: 1,
-    fillOpacity: 0.9
-  }).addTo(map)
+  let DefaultIcon = L.icon({
+    iconUrl: markerIcon,
+    iconRetinaUrl: markerIconRetina,
+    shadowUrl: markerShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41]
+  });
+
+  L.Marker.prototype.options.icon = DefaultIcon;
 
 })
 </script>
