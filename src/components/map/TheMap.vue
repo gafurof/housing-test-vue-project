@@ -49,18 +49,16 @@ onMounted(() => {
     maxZoom: 20
   }).addTo(map)
 
-  let DefaultIcon = L.icon({
+  // 🔥 MUHIM QISM
+  delete L.Icon.Default.prototype._getIconUrl
+
+  L.Icon.Default.mergeOptions({
     iconUrl: markerIcon,
     iconRetinaUrl: markerIconRetina,
     shadowUrl: markerShadow,
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    tooltipAnchor: [16, -28],
-    shadowSize: [41, 41]
-  });
+  })
 
-  L.Marker.prototype.options.icon = DefaultIcon;
-
+  // 🔥 Marker qo‘shildi
+  L.marker([lat, lng]).addTo(map)
 })
 </script>
