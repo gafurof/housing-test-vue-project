@@ -214,7 +214,7 @@
 
       <v-col cols="12" sm="12">
         <v-row class="px-3" justify="end">
-          <v-btn v-if="!mobile" color="primary" size="large" class="px-15 my-3">
+          <v-btn loading v-if="!mobile" color="primary" size="large" class="px-15 my-3">
             Submit
           </v-btn>
           <v-btn v-else block color="primary" size="large" class="my-3">
